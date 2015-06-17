@@ -250,8 +250,8 @@ void chkTerminal_Change (Widget w, XtPointer client_data, XmAnyCallbackStruct *c
 
 void txtCommand_Change (Widget w, XtPointer client_data, XmAnyCallbackStruct *call)
 {
-	if (szCommand != NULL) XtFree(szCommand);
 	Arg args; String szValue;
+	if (szCommand != NULL) XtFree(szCommand);
 	XtSetArg(args, XmNvalue, &szValue);
 	XtGetValues(w, &args, 1);
 	szCommand = szValue;
