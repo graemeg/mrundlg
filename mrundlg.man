@@ -1,0 +1,76 @@
+.\" Copyright (c) 2005 Matthew Holder (sixxgate@hotmail.com
+.\"
+.\" This program is free software; you can redistribute it and/or modify
+.\" it under the terms of the GNU General Public License as published by
+.\" the Free Software Foundation; either version 2 of the License, or
+.\" (at your option) any later version.
+.\" 
+.\" This program is disstributed in the hope that it will be useful,
+.\" but WITHOUT ANY WARRANTY; without even the implied warranty of
+.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+.\" GNU General Public License for more details.
+.\" 
+.\" You should have received a copy of the GNU General Public License
+.\" along with this program; if not, write to the Free Software
+.\" Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+.\" 
+.\"     @(#)mrundlg.1	1.0 (MatthewHolder) 7/12/2005
+.\" $Id
+.\"
+.Dd July 12, 2005
+.Dt MRUNDLG 1 CON
+.Os "X Window" "version 11"
+.Sh NAME
+.Nm mrundlg
+.Nd An application launcher dialog box for Motif/X like Windows Run Dialog.
+.Sh SYNOPSIS
+.Nm
+.Op Fl toolkitoption...
+.Op Ar file
+.Sh DESCRIPTION
+.Nm
+pops up a window to prompt the user to type in a command to run.  It provides
+additional functionaly:
+.Pp
+.Dl - Allow the user to start the command in an X Terminal Window
+.Pp
+.Dl - Detect if the command is a URL and start it in a defined browser
+.Sh OPTIONS
+.Nm
+is build upon Motif/X (Xm) and as such understands all the
+normal command line options (as described in
+.Xr X 1 Ns ) Ns \&.
+.Sh WIDGET AND RESOURCE NAMES
+.Nm
+supports all the standard resources of the widgets used in mmore.  No additional
+resources are defined.  Please refer to the application default file, typically
+/usr/X11R6/lib/X11/app-defaults/MRunDlg.
+.Sh ENVIRONMENT
+.Nm
+uses the following environment variables:
+.Bl -tag -width ".Ev BROWSER"
+.It Ev XTERM
+This environment variable is set to the program that will be used to define
+the name of the terminal to use when running commands.  The default is xterm.
+.It Ev BROWSER
+This environment variable is set to the program that will be used for viewing
+URLs beginning with "http://", "ftp://", "www.", and "ftp."
+.El
+.Sh EXAMPLES
+.Nm
+is as simple as running it:
+.Pp
+.Dl mrundlg &
+.Pp
+.Sh SEE ALSO
+.Xr X 1
+.Xr exec 1
+.Xr system 2
+.Xr X 7
+.Sh BUGS
+Don't know if there are any.
+.Sh AUTHOR
+.An "Matthew Holder"
+(6XGate Incorporated)
+.Aq sixxgate@hotmail.com Ns
+\&.
